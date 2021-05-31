@@ -5,8 +5,11 @@ import br.com.claucio.dev.tictactoe.ui.UI;
 
 public class Board {
 
-    public char[][] matrix;
+    private char[][] matrix;
 
+    public char[][] getMatrix() {
+        return matrix;
+    }
 
     Board() {
         matrix = new char[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
@@ -54,10 +57,10 @@ public class Board {
     }
 
     public boolean play(Player player, Move move) {
-      int row = move.row;
-      int col = move.column;
+      int row = move.getRow();
+      int col = move.getColumn();
 
-      matrix[row][col] = player.symbol;
+      matrix[row][col] = player.getSymbol();
       //TODO: checar se o jogador ganhou
       return  false;
 

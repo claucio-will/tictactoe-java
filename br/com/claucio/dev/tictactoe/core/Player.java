@@ -1,14 +1,42 @@
 package br.com.claucio.dev.tictactoe.core;
 
+import br.com.claucio.dev.tictactoe.ui.UI;
+
 public class Player {
-    public String name;
-    public Board board;
-    public char symbol;
+    private String name;
+    private Board board;
+    private char symbol;
 
-    Move inputMove(){
-        return null;
+    public Player(String name, Board board, char symbol) {
+        this.name = name;
+        this.board = board;
+        this.symbol = symbol;
     }
-    void play(){
+
+    private Move inputMove() {
+        String moveStr = UI.readInput("Jogador " + name + " =>");
+        return new Move(moveStr);
 
     }
+
+    void play() {
+        Move move = inputMove();
+        board.play(this, move);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
+    public Board getBoard() {
+        return board;
+    }
+
+
+    public char getSymbol() {
+        return symbol;
+    }
+
+
 }
