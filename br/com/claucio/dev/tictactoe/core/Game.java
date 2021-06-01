@@ -9,7 +9,6 @@ public class Game {
     private Player[] players = new Player[Constants.SYMBOL_PLAYER.length];
 
     public void play(){
-
         UI.printGameTitle();
         board.print();
     }
