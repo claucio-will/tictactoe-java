@@ -25,6 +25,7 @@ public class Game {
 
             try {
                 sequenceFound = currentPlayer.play();
+
             } catch (InvalidMoveException e) {
                 UI.printText("Erro: " + e.getMessage());
                 continue;
