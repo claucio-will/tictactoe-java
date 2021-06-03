@@ -4,10 +4,14 @@ public class Move {
     private int column;
     private int row;
 
-    public Move(String moveStr) {
-     String[] token = moveStr.split(",");
-     this.row = Integer.parseInt(token[0]);
-     this.column = Integer.parseInt(token[1]);
+    public Move(String moveStr) throws InvalidMoveException {
+        try {
+            String[] token = moveStr.split(",");
+            this.row = Integer.parseInt(token[0]);
+            this.column = Integer.parseInt(token[1]);
+        } catch (Exception e) {
+          throw new InvalidMoveException("A jogada é inválida");
+        }
 
     }
 
