@@ -1,6 +1,6 @@
 # TICTACTOE (jogo da velha)
 
-Jogo da velha criado com o java.
+Jogo da velha feito em java.
 
 # PRIMEIROS PASSOS
 
